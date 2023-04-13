@@ -9,7 +9,7 @@ VALUES ("employee", 15.00, 001),
         ("employee", 15.00, 002),
         ("employee", 15.00, 003),
         ("employee", 15.00, 004),
-        ("manager", 30.00, 005);
+        ("manager", 30.00, 004);
 
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
 VALUES ("Michael", "Huang", 001),
