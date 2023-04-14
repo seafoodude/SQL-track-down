@@ -1,14 +1,10 @@
 const inquirer = require('inquirer');
 
-// const Department = require('./')
-// const Employee = require('./')
-// const Role = require('./')
+
 
 console.clear();
 
 console.log("\n Irasshaimase! \n (Japanese for 'Welcome!')");
-
-startPrompt();
 
 const startPrompt = () => {
     inquirer.prompt([
@@ -16,52 +12,52 @@ const startPrompt = () => {
             type: 'list',
             name: 'mainMenu',
             message: 'What would you like to do?',
-            choices: ['View all Employees', 'Add/Update employee', 'View all roles', 'Add/Update role', 'View all Departments', 'Add/Update department', 'Quit']
+            choices: ['View All Employees', 'View All Employees By Department', 'View All Employees By Manager', 'Add Employee', 'Update Employee Role', 'View Departments', 'Add Department', 'View Roles', 'Add Role', 'View totalized budget', 'Exit']
         }
     ])
     .then((res) => {
-        switch (res.startPrompt) {
-            case 'View all employees':
-                console.log('\n');
-                employees();
+        switch (res['begin choices']) {
+            case 'View All Employees':
+                AllEmp();
                 break;
-
-            case 'Add/Update employee':
-                console.log('\n');
-                changeEmployees();
+            case 'View All Employees By Department':
+                EmpByDep();
                 break;
-
-            case 'View all roles':
-                console.log('\n');
-                roles();
+            case 'View All Employees By Manager':
+                EmpByMngt();
                 break;
-
-            case 'Add/Update roles':
-                console.log('\n');
-                changeRoles();
+            case 'Add Employee':
+                addEmp();
                 break;
-
-            case 'View all departments':
-                console.log('\n');
-                departments();
+            case 'Update Employee Role':
+                updateEmp();
                 break;
-                
-            case 'Add/Update department':
-                console.log('\n');
-                changeDepartments();
+            case 'View Departments':
+                viewDep();
                 break;
-            
-            default:
-                console.log('\n');
-                console.log('\nSayonara!\n');
-                process.exit();
+            case 'Add Department':
+                addDep();
+                break;
+            case 'View Roles':
+                viewRoles();
+                break;
+            case 'Add Role':
+                addRole();
+                break;
+            case 'View totalized budget':
+                viewTotalBud();
+                break;
+            case 'Exit':
                 break;
         }
     })
-}
+};
 
-const employees = () => {
+module.exports = { startPrompt }
 
-}
+const { AllEmp, EmpByDep, EmpByMngt, addEmp, updateEmp } = require('./lib/employee');
+const { viewDep, addDep } = require('./lib/department');
+const { viewRoles, addRole } = require('./lib/roles');
+const { viewTotalBud } = require('./lib/calculations');
 
-module.exports = { }
+startPrompt()
