@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
 
-// const department = require('./')
-// const employee = require('./')
-// const role = require('./')
+// const Department = require('./')
+// const Employee = require('./')
+// const Role = require('./')
 
 console.clear();
 
@@ -10,7 +10,7 @@ console.log("\n Irasshaimase! \n (Japanese for 'Welcome!')");
 
 startPrompt();
 
-function startPrompt() {
+const startPrompt = () => {
     inquirer.prompt([
         {
             type: 'list',
@@ -59,3 +59,9 @@ function startPrompt() {
         }
     })
 }
+
+const employees = () => {
+
+}
+
+module.exports = { }
