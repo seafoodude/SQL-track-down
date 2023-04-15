@@ -2,12 +2,5 @@
 
 As of right now, nothing in here works.
 
-I will finish it by 04/15/2023 at 3pm.
-
-If it is not done by then, don't bother looking through this and just give me a 0/100.
-
-Otherwise, I ask that you please grade this after the set time above.
-
-Thank you kindly <3
-
-~ Michael
+I was attempting to finish this hw assignment, but mysql keeps crashing before I can select
+an option through inquirer, and it starts a new line in my terminal. I do not understand why, and will need a tutor to go through this.
