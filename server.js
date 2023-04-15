@@ -1,7 +1,5 @@
 const inquirer = require('inquirer');
 
-
-
 console.clear();
 
 console.log("\n Irasshaimase! \n (Japanese for 'Welcome!')");
@@ -18,13 +16,13 @@ const startPrompt = () => {
     .then((res) => {
         switch (res['begin choices']) {
             case 'View All Employees':
-                AllEmp();
+                allEmp();
                 break;
             case 'View All Employees By Department':
-                EmpByDep();
+                empByDep();
                 break;
             case 'View All Employees By Manager':
-                EmpByMngt();
+                empByMngt();
                 break;
             case 'Add Employee':
                 addEmp();
@@ -55,7 +53,7 @@ const startPrompt = () => {
 
 module.exports = { startPrompt }
 
-const { AllEmp, EmpByDep, EmpByMngt, addEmp, updateEmp } = require('./lib/employee');
+const { allEmp, empByDep, empByMngt, addEmp, updateEmp } = require('./lib/employee');
 const { viewDep, addDep } = require('./lib/department');
 const { viewRoles, addRole } = require('./lib/roles');
 const { viewTotalBud } = require('./lib/calculations');
